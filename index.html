@@ -1,261 +1,215 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0d0d0d">
-<title>GlucoMax</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Accès VIP</title>
 
-<!-- ===== PRELOADS VTURB ===== -->
+<!-- ===== VTURB PRELOAD ===== -->
 <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
-<link rel="preload" href="https://scripts.converteai.net/20a070d6-dd0d-4397-aab3-ecc0fb3a86c2/players/6a716505f3faf2c3d5c1c751/v4/player.js" as="script">
+<link rel="preload" href="https://scripts.converteai.net/20a070d6-dd0d-4397-aab3-ecc0fb3a86c2/players/6a6ad1c625b1229f3890bdbd/v4/player.js" as="script">
 <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
-<link rel="preload" href="https://cdn.converteai.net/20a070d6-dd0d-4397-aab3-ecc0fb3a86c2/6a7164f63500350f8ea9d067/main.m3u8" as="fetch">
+<link rel="preload" href="https://cdn.converteai.net/20a070d6-dd0d-4397-aab3-ecc0fb3a86c2/6a6ad1c0dc36d99533fc1e7c/main.m3u8" as="fetch">
 <link rel="dns-prefetch" href="https://cdn.converteai.net">
 <link rel="dns-prefetch" href="https://scripts.converteai.net">
 <link rel="dns-prefetch" href="https://images.converteai.net">
 <link rel="dns-prefetch" href="https://license.vturb.com">
+<!-- ===== FIM PRELOAD ===== -->
+
+<!-- ===== KASHPAY ===== -->
+<script src="https://checkout.kashpay.com/scripts/upsell-processor.js"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Merriweather:wght@700;900&family=Poppins:wght@600&display=swap" rel="stylesheet">
-
-<!-- ===== SCRIPT KASHPAY (no head, sem async/defer) ===== -->
-<script src="https://checkout.kashpay.com.br/scripts/upsell-processor.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Karla:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box}
-body{
-  margin:0;
-  background:#0d0d0d;
-  background-image:
-    radial-gradient(ellipse 70% 40% at 50% 0%, rgba(201,168,76,.16), transparent 70%),
-    radial-gradient(ellipse 60% 35% at 50% 100%, rgba(201,168,76,.08), transparent 70%);
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  padding:24px 16px 40px;
-  font-family:'DM Sans',system-ui,-apple-system,Segoe UI,Arial,sans-serif;
-  color:#f0ede6;
-}
+  :root{
+    --bg:#070502;
+    --gold:#c9a24b;
+    --gold-lt:#e6c878;
+    --gold-dk:#7a5f1e;
+    --ink:#f4ecdd;
+    --muted:#9c8d76;
+    --line:rgba(201,162,75,.22);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:
+      radial-gradient(900px 600px at 50% -5%, rgba(201,162,75,.14), transparent 55%),
+      var(--bg);
+    color:var(--ink);
+    font-family:'Karla',system-ui,sans-serif;
+    line-height:1.6;
+    min-height:100vh;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{max-width:520px;margin:0 auto;padding:26px 18px 60px;text-align:center}
 
-/* ===== HOOK ===== */
-.wordmark{
-  font-family:'Merriweather',Georgia,serif;font-weight:900;
-  letter-spacing:.32em;font-size:.72rem;color:#c9a84c;opacity:.8;
-  margin-bottom:18px;
-}
-.pill{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:7px 14px;border-radius:999px;
-  background:rgba(33,150,83,.12);border:1px solid rgba(33,150,83,.45);
-  color:#27b163;font-size:.72rem;font-weight:700;letter-spacing:.12em;
-}
-.dot{width:8px;height:8px;border-radius:50%;background:#27b163;
-  box-shadow:0 0 0 0 rgba(39,177,99,.6);animation:pulse 1.6s infinite}
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(39,177,99,.6)}
-  70%{box-shadow:0 0 0 10px rgba(39,177,99,0)}
-  100%{box-shadow:0 0 0 0 rgba(39,177,99,0)}
-}
-.hook{text-align:center;max-width:400px;margin-bottom:20px}
-.hook h1{
-  font-family:'Merriweather',Georgia,serif;font-weight:900;
-  font-size:clamp(1.45rem,6vw,1.9rem);line-height:1.2;margin:14px 0 8px;color:#f0ede6;
-}
-.hook p{margin:0;color:#b8ad95;font-size:.95rem;line-height:1.5}
+  .badge{
+    display:inline-block;border:1px solid var(--line);border-radius:999px;
+    background:rgba(201,162,75,.07);color:var(--gold-lt);
+    font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+    padding:8px 16px;margin-bottom:18px;
+  }
 
-/* ===== PLAYER COM MOLDURA DOURADA ===== */
-.player-wrap{
-  position:relative;width:100%;max-width:400px;
-  padding:6px;border-radius:14px;
-  background:linear-gradient(145deg,#c9a84c,#5e4a1c 45%,#c9a84c);
-  box-shadow:0 20px 50px rgba(0,0,0,.6),0 0 40px rgba(201,168,76,.15);
-}
-.player-inner{border-radius:9px;overflow:hidden;background:#000}
-.corner{position:absolute;width:18px;height:18px;border-color:#e3c977;border-style:solid;pointer-events:none}
-.c-tl{top:-6px;left:-6px;border-width:2px 0 0 2px}
-.c-tr{top:-6px;right:-6px;border-width:2px 2px 0 0}
-.c-bl{bottom:-6px;left:-6px;border-width:0 0 2px 2px}
-.c-br{bottom:-6px;right:-6px;border-width:0 2px 2px 0}
+  h1{
+    font-family:'Cinzel',serif;font-weight:900;
+    font-size:clamp(22px,5.6vw,32px);line-height:1.15;
+    background:linear-gradient(180deg,#fff6dd 0%,var(--gold) 65%,var(--gold-dk) 100%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+    margin-bottom:10px;
+  }
+  .sub{color:var(--muted);font-size:14.5px;max-width:34ch;margin:0 auto 20px}
 
-/* botao aparece aos 04:21 */
-#reveal{display:none;width:100%;max-width:400px;margin-top:22px}
-#reveal.show{display:block;animation:rise .55s cubic-bezier(.2,.8,.3,1) both}
-@keyframes rise{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:none}}
+  .video-wrap{
+    margin:0 auto 16px;border-radius:18px;overflow:hidden;
+    box-shadow:0 22px 60px rgba(0,0,0,.7);max-width:400px;
+  }
 
-#reveal button{
-  width:100%!important;
-  max-width:100%!important;
-  min-height:58px;
-  box-shadow:0 10px 26px rgba(33,150,83,.32);
-  transition:filter .12s ease,transform .12s ease;
-}
-#reveal button:hover{filter:brightness(1.08)}
-#reveal button:active{transform:translateY(1px)}
+  .sound-hint{
+    display:flex;align-items:center;justify-content:center;gap:7px;
+    color:var(--muted);font-size:12.5px;margin-bottom:8px;
+  }
+  .sound-hint svg{width:16px;height:16px;flex-shrink:0}
 
-#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9999}
+  .cta-area{margin:22px auto 0}
 
-@media(prefers-reduced-motion:reduce){#reveal.show{animation:none}.dot{animation:none}}
+  .microcopy{margin-top:12px;color:var(--muted);font-size:12.5px}
+
+  .scarcity{
+    margin:18px auto 0;max-width:380px;color:var(--gold-lt);
+    font-size:13px;font-weight:600;
+  }
+
+  /* CTA liberado aos 01:34 da VSL */
+  #cta-content{display:none}
+  #cta-content.show{display:block;animation:rise .5s ease-out both}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){#cta-content.show{animation:none}}
+
+  #confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9999}
+
+  footer{margin-top:34px;color:rgba(156,141,118,.5);font-size:11px;line-height:1.7}
 </style>
 </head>
 <body>
-
 <canvas id="confetti"></canvas>
+<main class="page">
 
-<!-- ===== HOOK ===== -->
-<div class="wordmark">GLUCOMAX</div>
-<div class="hook">
-  <span class="pill"><span class="dot"></span>COMMANDE CONFIRMÉE</span>
-  <h1>Ne fermez pas cette page.</h1>
-  <p>Il reste une dernière étape avant votre accès.</p>
-</div>
+  <span class="badge">Offre unique · réservée aux membres</span>
 
-<!-- ===== VSL ===== -->
-<div class="player-wrap">
-  <span class="corner c-tl"></span><span class="corner c-tr"></span>
-  <span class="corner c-bl"></span><span class="corner c-br"></span>
-  <div class="player-inner">
-    <vturb-smartplayer id="vid-6a716505f3faf2c3d5c1c751" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/20a070d6-dd0d-4397-aab3-ecc0fb3a86c2/players/6a716505f3faf2c3d5c1c751/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+  <h1>Accès VIP</h1>
+  <p class="sub">Regardez cette courte vidéo jusqu'à la fin.</p>
+
+  <div class="video-wrap">
+    <vturb-smartplayer id="vid-6a6ad1c625b1229f3890bdbd" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>
   </div>
-</div>
 
-<!-- ===== BOTAO KASHPAY (aparece aos 04:21) ===== -->
-<div id="reveal">
-  <button type="button" onclick="acceptUpsell('https://checkout.kashpay.com.br/u/0f363a3d3cdbc9c1')" style="font-family: 'Poppins'; font-size: 18px; font-weight: 600; line-height: 1.3; color: #ffffff; background-color: #057932; border: none; border-radius: 10px; padding: 13px 7%; cursor: pointer; text-align: center; display: block; margin: auto;">Je veux ma récompense.</button>
-</div>
+  <div class="sound-hint">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+    </svg>
+    Assurez-vous que le son est activé
+  </div>
 
+  <!-- ===== CTA ===== -->
+  <div id="cta-content">
+    <div class="cta-area">
+
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;"><button type="button" onclick="acceptUpsell('https://checkout.kashpay.com/u/692fe38ebf5cd535')" style="font-family: 'Poppins'; font-size: 26px; font-weight: 600; line-height: 1.3; color: #ffffff; background-color: #025020; border: none; border-radius: 50px; padding: 13px 7%; cursor: pointer; text-align: center; display: block; margin: auto;">Bénéficier de ma réduction</button><button type="button" onclick="declineUpsell('https://checkout.kashpay.com/u/692fe38ebf5cd535')" style="font-family: 'Poppins'; font-size: 15px; font-weight: 600; line-height: 1.3; color: #6e6352; background-color: #070502; border: none; border-radius: 10px; padding: 10px 5%; cursor: pointer; text-align: center; display: block; margin: auto;">Non, merci.</button></div>
+
+      <p class="microcopy">Paiement unique · Accès immédiat</p>
+      <p class="scarcity">⚠ Cette offre n'apparaît qu'ici. Si vous quittez cette page, elle disparaît.</p>
+    </div>
+  </div>
+
+  <footer>
+    © Protocole Masculin — Tous droits réservés<br>
+    Ce contenu fournit des informations de bien-être et ne remplace pas un avis médical.
+  </footer>
+
+</main>
+
+<!-- Player Vturb -->
+<script type="text/javascript">
+  var s=document.createElement("script");
+  s.src="https://scripts.converteai.net/20a070d6-dd0d-4397-aab3-ecc0fb3a86c2/players/6a6ad1c625b1229f3890bdbd/v4/player.js";
+  s.async=!0;
+  document.head.appendChild(s);
+</script>
+
+<!-- Libera o CTA quando a VSL chega em 01:34 (preco) -->
 <script>
 (function(){
-  "use strict";
-
-  /* ===== TEMPO DE LIBERACAO (segundos) — 04:21 = 261 ===== */
-  var REVEAL_AT = 261;
-
-  var revealed = false;
-  var el = document.getElementById('reveal');
+  var REVEAL_AT = 94;            // 01:34 do video
+  var FALLBACK_AFTER = 15000;    // se nao conseguir ler o player em 15s, usa contador
+  var el = document.getElementById('cta-content');
+  var done = false, sawVideo = false, start = Date.now(), fallback = null;
 
   function reveal(){
-    if(revealed) return;
-    revealed = true;
+    if(done) return; done = true;
     el.classList.add('show');
     fireConfetti();
-    setTimeout(function(){
-      try{ el.scrollIntoView({behavior:'smooth', block:'center'}); }catch(e){}
-    }, 260);
+    setTimeout(function(){ try{ el.scrollIntoView({behavior:'smooth',block:'center'}); }catch(e){} }, 260);
+    clearInterval(loop); if(fallback) clearTimeout(fallback);
   }
 
-  /* --- 1) tempo real do player VTurb --- */
-  var hooked = false, tries = 0;
-  var poll = setInterval(function(){
-    tries++;
-    if(hooked || revealed || tries > 100){ clearInterval(poll); return; }
-
-    var sp = window.smartplayer;
-    var inst = sp && sp.instances && sp.instances.length ? sp.instances[0] : null;
-    if(!inst) return;
-
+  function videoTime(){
     try{
-      if(typeof inst.on === 'function'){
-        inst.on('timeupdate', function(){
-          var t = currentTime(inst);
-          if(t !== null && t >= REVEAL_AT) reveal();
-        });
-        hooked = true;
+      var sp = window.smartplayer;
+      var inst = sp && sp.instances && sp.instances[0];
+      if(inst){
+        if(typeof inst.currentTime === 'number' && !isNaN(inst.currentTime)) return inst.currentTime;
+        if(inst.video && typeof inst.video.currentTime === 'number') return inst.video.currentTime;
       }
+      var p = document.querySelector('vturb-smartplayer');
+      var v = (p && p.shadowRoot && p.shadowRoot.querySelector('video')) ||
+              (p && p.querySelector('video')) || document.querySelector('video');
+      if(v && typeof v.currentTime === 'number' && !isNaN(v.currentTime)) return v.currentTime;
     }catch(e){}
-
-    if(!hooked){
-      hooked = true;
-      setInterval(function(){
-        if(revealed) return;
-        var t = currentTime(inst);
-        if(t !== null && t >= REVEAL_AT) reveal();
-      }, 500);
-    }
-    clearInterval(poll);
-  }, 300);
-
-  function currentTime(inst){
-    try{
-      if(typeof inst.currentTime === 'number') return inst.currentTime;
-      if(inst.video && typeof inst.video.currentTime === 'number') return inst.video.currentTime;
-    }catch(e){}
-    var v = document.querySelector('vturb-smartplayer video') || document.querySelector('video');
-    if(v && typeof v.currentTime === 'number' && !isNaN(v.currentTime)) return v.currentTime;
     return null;
   }
 
-  /* --- 2) rede de seguranca --- */
-  setTimeout(reveal, (REVEAL_AT + 2) * 1000);
+  var loop = setInterval(function(){
+    var t = videoTime();
+    if(t !== null){ sawVideo = true; if(t >= REVEAL_AT) reveal(); }
+    if(!sawVideo && !fallback && Date.now() - start > FALLBACK_AFTER){
+      // player nao encontrado: contador a partir da entrada na pagina
+      fallback = setTimeout(reveal, REVEAL_AT*1000 - (Date.now() - start));
+    }
+  }, 500);
 
-
-  /* ===== CONFETE ===== */
   function fireConfetti(){
     if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
     var canvas = document.getElementById('confetti');
     var ctx = canvas.getContext('2d');
-    var dpr = window.devicePixelRatio || 1;
-    var W, H;
-
-    function size(){
-      W = canvas.clientWidth; H = canvas.clientHeight;
-      canvas.width = W*dpr; canvas.height = H*dpr;
-      ctx.setTransform(dpr,0,0,dpr,0,0);
-    }
-    size();
-    window.addEventListener('resize', size);
-
-    var colors = ['#c9a84c','#e3c977','#219653','#27b163','#f0ede6','#a8862f'];
-    var parts = [];
-    var COUNT = window.innerWidth < 520 ? 90 : 150;
-
+    var dpr = window.devicePixelRatio || 1, W, H;
+    function size(){ W = canvas.clientWidth; H = canvas.clientHeight;
+      canvas.width = W*dpr; canvas.height = H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
+    size(); window.addEventListener('resize', size);
+    var colors = ['#c9a24b','#e6c878','#7a5f1e','#057932','#27b163','#f4ecdd'];
+    var parts = [], COUNT = window.innerWidth < 520 ? 90 : 150;
     for(var i=0;i<COUNT;i++){
-      parts.push({
-        x: W/2 + (Math.random()-.5)*W*.6,
-        y: -20 - Math.random()*H*.3,
-        w: 6 + Math.random()*6,
-        h: 9 + Math.random()*8,
-        color: colors[(Math.random()*colors.length)|0],
-        vx: (Math.random()-.5)*2.4,
-        vy: 2.2 + Math.random()*3.2,
-        rot: Math.random()*Math.PI,
-        vr: (Math.random()-.5)*.24,
-        sway: Math.random()*Math.PI*2
-      });
+      parts.push({ x: W/2 + (Math.random()-.5)*W*.6, y: -20 - Math.random()*H*.3,
+        w: 6+Math.random()*6, h: 9+Math.random()*8, color: colors[(Math.random()*colors.length)|0],
+        vx: (Math.random()-.5)*2.4, vy: 2.2+Math.random()*3.2, rot: Math.random()*Math.PI,
+        vr: (Math.random()-.5)*.24, sway: Math.random()*Math.PI*2 });
     }
-
-    var start = performance.now(), DURATION = 3400;
-
+    var t0 = performance.now(), DURATION = 3400;
     (function frame(now){
-      var elapsed = now - start;
-      ctx.clearRect(0,0,W,H);
-      var fade = elapsed > DURATION-900 ? Math.max(0,(DURATION-elapsed)/900) : 1;
-
-      for(var i=0;i<parts.length;i++){
-        var p = parts[i];
-        p.sway += .05;
-        p.x += p.vx + Math.sin(p.sway)*.9;
-        p.y += p.vy;
-        p.rot += p.vr;
-
-        ctx.save();
-        ctx.globalAlpha = fade;
-        ctx.translate(p.x,p.y);
-        ctx.rotate(p.rot);
-        ctx.fillStyle = p.color;
-        ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);
-        ctx.restore();
-      }
-
-      if(elapsed < DURATION) requestAnimationFrame(frame);
-      else ctx.clearRect(0,0,W,H);
-    })(start);
+      var el2 = now - t0; ctx.clearRect(0,0,W,H);
+      var fade = el2 > DURATION-900 ? Math.max(0,(DURATION-el2)/900) : 1;
+      for(var i=0;i<parts.length;i++){ var p = parts[i];
+        p.sway += .05; p.x += p.vx + Math.sin(p.sway)*.9; p.y += p.vy; p.rot += p.vr;
+        ctx.save(); ctx.globalAlpha = fade; ctx.translate(p.x,p.y); ctx.rotate(p.rot);
+        ctx.fillStyle = p.color; ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h); ctx.restore(); }
+      if(el2 < DURATION) requestAnimationFrame(frame); else ctx.clearRect(0,0,W,H);
+    })(t0);
   }
-
 })();
 </script>
 
